@@ -18,10 +18,12 @@ namespace HangManProject
 
             Console.WriteLine(dislplayString.ToString());
 
-            while (lifeLeft > 0)
+            while (lifeLeft > 0 && dislplayString.ToString() != secretWord)
             {
                 Console.WriteLine("Skriv bokstav");
                 var input = Console.ReadLine();
+
+                Console.Clear();
 
                 char letter = input[0];
 
@@ -41,19 +43,27 @@ namespace HangManProject
                     {
                         if(letter == secretWord[i])
                         {
+                            Console.WriteLine("correct");
                             dislplayString[i]=secretWord[i];
                         }
                     }
-                    Console.WriteLine(dislplayString);
                 }
 
                 else
                 {
                     lifeLeft--;
                     Console.WriteLine("fail");
-                    Console.WriteLine(dislplayString);
                 }
+                Console.WriteLine(dislplayString);
+            }
 
+            if (lifeLeft == 0)
+            {
+                Console.WriteLine("boohoo");
+            }
+            else
+            {
+                Console.WriteLine("hurray");
             }
         }
     }
