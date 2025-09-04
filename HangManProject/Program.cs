@@ -17,8 +17,15 @@ namespace HangManProject
             }
 
             Console.WriteLine(dislplayString.ToString());
-            //Console.WriteLine(Console.ReadLine());
-            //jello!!
+
+            while(lifeLeft > 0)
+            {
+                Console.WriteLine("Skriv bokstav");
+                var input = Console.ReadLine();
+                Console.WriteLine(input);
+            }
         }
     }
 }
+  //Console.WriteLine(Console.ReadLine());
+            //jello!!
