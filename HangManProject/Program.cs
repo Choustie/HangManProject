@@ -18,11 +18,42 @@ namespace HangManProject
 
             Console.WriteLine(dislplayString.ToString());
 
-            while(lifeLeft > 0)
+            while (lifeLeft > 0)
             {
                 Console.WriteLine("Skriv bokstav");
                 var input = Console.ReadLine();
-                Console.WriteLine(input);
+
+                char letter = input[0];
+
+                var hit = false;
+
+                for (int i = 0; i<secretWord.Length; i++)
+                {
+                    if (letter == secretWord[i])
+                    {
+                        hit = true;
+                    }
+                }
+
+                if (hit)
+                {
+                    for (int i = 0; i < secretWord.Length; i++)
+                    {
+                        if(letter == secretWord[i])
+                        {
+                            dislplayString[i]=secretWord[i];
+                        }
+                    }
+                    Console.WriteLine(dislplayString);
+                }
+
+                else
+                {
+                    lifeLeft--;
+                    Console.WriteLine("fail");
+                    Console.WriteLine(dislplayString);
+                }
+
             }
         }
     }
