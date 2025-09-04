@@ -18,6 +18,7 @@ namespace HangManProject
 
             Console.WriteLine(dislplayString.ToString());
             //Console.WriteLine(Console.ReadLine());
+            //jello!!
         }
     }
 }
